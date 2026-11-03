@@ -22,6 +22,7 @@ frontend/dist-ssr/
 !.env.example
 backend/.env
 backend/.env.*
+!backend/.env.example
 
 # --- OS / editors ---
 .DS_Store

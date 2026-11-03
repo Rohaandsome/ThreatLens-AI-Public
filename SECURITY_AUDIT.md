@@ -5,6 +5,8 @@
 **Method:** Manual code review of every route, service, and config; pattern scans for secrets in tracked files, built bundles, and full Git history (values redacted); live in-process verification of key findings with isolated state (no external calls); local dependency inventory (no new tools installed, per instructions).
 **Overall verdict:** Strong secure-coding foundations (server-side TLP enforcement, secret hygiene, injection resistance, append-only audit) but **not releasable beyond localhost as-is**: there is no authentication on any externally-effective endpoint, no rate limiting, and confidential uploads leave the building to a third-party model API without in-product disclosure. Fix C-1, H-1/H-2, H-3 before any deployment or public release.
 
+> **Status note (2026-11-02): The findings below are preserved as originally reported on 2026-10-31. Since then, all Critical/High findings have been remediated — C-1 (2026-10-31, operator session authentication), H-2 (2026-11-01, rate limiting + body caps), H-3 (2026-11-01, upload disclosure + consent enforcement), H-1 (2026-11-02, MISP destination allowlist; its authentication half was already closed by the C-1 role gating). See the "Remediation log" for details, verification, and residual notes. M-series and L-series hardening items remain open.**
+
 ## Severity scale
 
 - **Critical** — Directly exploitable with severe impact (data loss, external effects, cost). Blocks release.

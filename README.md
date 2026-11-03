@@ -2,6 +2,8 @@
 
 AI-Powered Cyber Threat Intelligence Analysis and Secure Sharing
 
+> **Demo video:** Coming soon — YouTube URL placeholder (no video link available yet).
+
 ## Overview
 
 Critical infrastructure teams face a flood of unstructured threat reports and need fast, trustworthy, shareable analysis. ThreatLens AI ingests a report, produces evidence-backed findings with Meta Muse Spark 1.3, and exports or shares results in standard formats with human approval.
@@ -21,7 +23,7 @@ Meta Model API (Muse Spark 1.3) · React / TypeScript / Vite · Python / FastAPI
 
 ## Quick Start
 
-Prerequisites: Python 3.11+, Node.js 18+.
+Prerequisites: Python 3.11+, Node.js 20.19+ or 22.12+ (required by Vite 8).
 
 ```bash
 # 1. Install dependencies
@@ -38,7 +40,7 @@ cp backend/.env.example backend/.env
 cd backend
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 
-# 4. Start the frontend (in a second terminal)
+# 4. Start the frontend (in a second terminal, from the project root)
 cd frontend
 npm run dev
 ```
