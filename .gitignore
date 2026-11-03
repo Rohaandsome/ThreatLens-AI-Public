@@ -1,0 +1,46 @@
+# --- Project toolchain (local installs, not part of the repo) ---
+.tools/
+
+# --- Python ---
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# --- Node / frontend ---
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+*.local
+
+# --- Env / secrets (never commit real keys) ---
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+
+# --- OS / editors ---
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# --- Logs / uploads ---
+*.log
+backend/uploads/
+backend/audit/
+backend/data/
+# Additional sensitive files
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db
+*.secrets.json

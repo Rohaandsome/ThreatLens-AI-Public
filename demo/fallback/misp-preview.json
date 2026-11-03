@@ -1,0 +1,101 @@
+{
+  "provenance": "Synthetic fallback preview built locally from canned data. Not sent anywhere; no MISP contact was made.",
+  "event": {
+    "info": "[ThreatLens] synthetic_ics_report.txt [TLP:AMBER]",
+    "distribution": 0,
+    "sharing_group_id": null,
+    "threat_level_id": 4,
+    "analysis": 2,
+    "published": false,
+    "tags": [
+      "tlp:amber",
+      "misp-galaxy:mitre-attack-pattern=\"Spearphishing Link - T1566.002\"",
+      "misp-galaxy:mitre-attack-pattern=\"Valid Accounts - T1078\""
+    ],
+    "attributes": [
+      {
+        "type": "ip-dst",
+        "value": "192.0.2.44",
+        "category": "Network activity",
+        "to_ids": true,
+        "comment": "Outbound TCP/443 from engineering workstation \u2014 Outbound connections were observed to 192.0.2.44 over TCP/443 \u2014 direction not specified by source"
+      },
+      {
+        "type": "domain",
+        "value": "turbine-updates.example.com",
+        "category": "Network activity",
+        "to_ids": true,
+        "comment": "DNS query + TLS SNI \u2014 and to turbine-updates.example.com."
+      },
+      {
+        "type": "vulnerability",
+        "value": "CVE-2026-44107",
+        "category": "External analysis",
+        "to_ids": false,
+        "comment": "Placeholder VPN-appliance flaw mentioned in telemetry discussion. \u2014 public exploit discussion of CVE-2026-44107"
+      },
+      {
+        "type": "text",
+        "value": "BM-ENG-WS04",
+        "category": "Other",
+        "to_ids": false,
+        "comment": "affected system (confirmed) \u2014 Engineering workstation, Unit 3 turbine control \u2014 unexpected logins to the turbine-control engineering workstation"
+      },
+      {
+        "type": "text",
+        "value": "BM-HIST-01",
+        "category": "Other",
+        "to_ids": false,
+        "comment": "affected system (confirmed) \u2014 Plant data historian \u2014 lateral movement to the plant historian server"
+      },
+      {
+        "type": "text",
+        "value": "Fictional intrusion at [FICTIONAL UTILITY REDACTED] Unit 3: a spearphishing attachment led to credential theft and lateral movement to the plant historian, with staging to external infrastructure.",
+        "category": "Other",
+        "to_ids": false,
+        "comment": "ThreatLens executive summary"
+      },
+      {
+        "type": "text",
+        "value": "One operator opened the attachment",
+        "category": "Other",
+        "to_ids": false,
+        "comment": "supporting evidence \u2014 Confirms initial-access vector."
+      },
+      {
+        "type": "text",
+        "value": "Isolate BM-ENG-WS04 and reimage from known-good media.",
+        "category": "Other",
+        "to_ids": false,
+        "comment": "priority: critical \u2014 Confirmed foothold host in this fictional scenario."
+      },
+      {
+        "type": "text",
+        "value": "Force password resets for the two targeted operators.",
+        "category": "Other",
+        "to_ids": false,
+        "comment": "priority: high \u2014 Credentials were stolen via the phishing lure."
+      },
+      {
+        "type": "text",
+        "value": "Synthetic fallback package for offline demo backup. Canned data only \u2014 not Meta AI output.",
+        "category": "Other",
+        "to_ids": false,
+        "comment": "Analyst notes"
+      },
+      {
+        "type": "text",
+        "value": "Source file: synthetic_ics_report.txt (ThreatLens AI, model canned-synthetic-fallback (NOT Meta AI output); package 36ff0ace49d6)",
+        "category": "Other",
+        "to_ids": false,
+        "comment": "Source attribution and sharing reference"
+      }
+    ]
+  },
+  "warnings": [],
+  "tlp_tag": "tlp:amber",
+  "destination": {
+    "distribution": 0,
+    "sharing_group_id": null
+  }
+}

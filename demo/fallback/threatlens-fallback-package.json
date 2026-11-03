@@ -1,0 +1,106 @@
+{
+  "package_id": "36ff0ace49d641fd9f44c43fc91a5770",
+  "prepared_at": "2026-11-02T15:00:44.174631Z",
+  "analyzed_at": "2026-11-02T12:00:00Z",
+  "source_filename": "synthetic_ics_report.txt",
+  "model": "canned-synthetic-fallback (NOT Meta AI output)",
+  "classification": {
+    "source_markings": [
+      null
+    ],
+    "effective_source": "TLP:AMBER",
+    "proposed": "TLP:AMBER",
+    "downgrade": false,
+    "analyst_asserted": true
+  },
+  "audience": "Limited disclosure: the recipient's organization and its clients, on a need-to-know basis.",
+  "audience_note": "",
+  "analyst_notes": "Synthetic fallback package for offline demo backup. Canned data only \u2014 not Meta AI output.",
+  "content": {
+    "executive_summary": "Fictional intrusion at [FICTIONAL UTILITY REDACTED] Unit 3: a spearphishing attachment led to credential theft and lateral movement to the plant historian, with staging to external infrastructure.",
+    "attack_techniques": [
+      {
+        "name": "Spearphishing Attachment",
+        "mitre_id": "T1566.002",
+        "description": "Operators received a malicious outage-schedule document.",
+        "evidence_quote": "subject \"Q4 outage schedule \u2014 action required\"",
+        "inferred": false
+      },
+      {
+        "name": "Valid Accounts",
+        "mitre_id": "T1078",
+        "description": "Stolen operator credentials used for lateral movement.",
+        "evidence_quote": "credential theft (T1078 \u2014 Valid Accounts)",
+        "inferred": false
+      }
+    ],
+    "indicators_of_compromise": [
+      {
+        "value": "192.0.2.44",
+        "type": "ip",
+        "context": "Outbound TCP/443 from engineering workstation",
+        "evidence_quote": "Outbound connections were observed to 192.0.2.44 over TCP/443",
+        "verified_in_source": true
+      },
+      {
+        "value": "turbine-updates.example.com",
+        "type": "domain",
+        "context": "DNS query + TLS SNI",
+        "evidence_quote": "and to turbine-updates.example.com.",
+        "verified_in_source": true
+      }
+    ],
+    "cves": [
+      {
+        "id": "CVE-2026-44107",
+        "description": "Placeholder VPN-appliance flaw mentioned in telemetry discussion.",
+        "evidence_quote": "public exploit discussion of CVE-2026-44107",
+        "verified_in_source": true
+      }
+    ],
+    "affected_systems": [
+      {
+        "system": "BM-ENG-WS04",
+        "detail": "Engineering workstation, Unit 3 turbine control",
+        "evidence_quote": "unexpected logins to the turbine-control engineering workstation",
+        "inferred": false
+      },
+      {
+        "system": "BM-HIST-01",
+        "detail": "Plant data historian",
+        "evidence_quote": "lateral movement to the plant historian server",
+        "inferred": false
+      }
+    ],
+    "recommendations": [
+      {
+        "recommendation": "Isolate BM-ENG-WS04 and reimage from known-good media.",
+        "priority": "critical",
+        "rationale": "Confirmed foothold host in this fictional scenario."
+      },
+      {
+        "recommendation": "Force password resets for the two targeted operators.",
+        "priority": "high",
+        "rationale": "Credentials were stolen via the phishing lure."
+      }
+    ],
+    "supporting_evidence": [
+      {
+        "quote": "One operator opened the attachment",
+        "relevance": "Confirms initial-access vector."
+      }
+    ]
+  },
+  "content_counts": {
+    "summary": 1,
+    "techniques": 2,
+    "iocs": 2,
+    "cves": 1,
+    "systems": 2,
+    "recommendations": 2,
+    "evidence": 1
+  },
+  "warnings": [],
+  "redactions_applied": 1,
+  "audit_id": "d0b529bd45584f168007be3f772bbb93"
+}

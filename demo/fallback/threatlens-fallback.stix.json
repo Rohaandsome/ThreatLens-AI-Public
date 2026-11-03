@@ -1,0 +1,241 @@
+{
+  "type": "bundle",
+  "id": "bundle--66df6f1c-6f50-42e9-b3c5-558ca8aaaab6",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.147125Z",
+      "modified": "2026-11-02T15:00:44.147125Z",
+      "name": "ThreatLens AI",
+      "description": "AI threat-intelligence analysis platform for critical infrastructure. Objects below were derived from an AI analysis of a single uploaded report; verification status is recorded per object.",
+      "identity_class": "system"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--1afac1d2-412e-445a-8912-0cc00a7148f9",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.147745Z",
+      "modified": "2026-11-02T15:00:44.147745Z",
+      "name": "ThreatLens IOC (ip): 192.0.2.44",
+      "description": "Indicator extracted from the analyzed report and verified verbatim against its text. Context: Outbound TCP/443 from engineering workstation\n\nEvidence (report excerpt): Outbound connections were observed to 192.0.2.44 over TCP/443",
+      "pattern": "[ipv4-addr:value = '192.0.2.44']",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "valid_from": "2026-11-02T15:00:44.147096Z",
+      "labels": [
+        "malicious-activity"
+      ],
+      "confidence": 85
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--604d2dcc-9c25-4306-8df4-9181ea4627f0",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.158796Z",
+      "modified": "2026-11-02T15:00:44.158796Z",
+      "name": "ThreatLens IOC (domain): turbine-updates.example.com",
+      "description": "Indicator extracted from the analyzed report and verified verbatim against its text. Context: DNS query + TLS SNI\n\nEvidence (report excerpt): and to turbine-updates.example.com.",
+      "pattern": "[domain-name:value = 'turbine-updates.example.com']",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "valid_from": "2026-11-02T15:00:44.147096Z",
+      "labels": [
+        "malicious-activity"
+      ],
+      "confidence": 85
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--b72e1d81-2152-41fd-95c1-82b5ad75bf48",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.161093Z",
+      "modified": "2026-11-02T15:00:44.161093Z",
+      "name": "CVE-2026-44107",
+      "description": "Placeholder VPN-appliance flaw mentioned in telemetry discussion.\n\nEvidence (report excerpt): public exploit discussion of CVE-2026-44107",
+      "confidence": 85,
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-44107"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--af1e1872-beb1-42dd-a6b3-055698123a08",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.163689Z",
+      "modified": "2026-11-02T15:00:44.163689Z",
+      "name": "Spearphishing Link",
+      "description": "Operators received a malicious outage-schedule document.\n\nEvidence (report excerpt): subject \"Q4 outage schedule \u2014 action required\"",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1566/002",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--dde113c2-b782-40e7-aa2e-c7e5569cdd91",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.164212Z",
+      "modified": "2026-11-02T15:00:44.164212Z",
+      "name": "Valid Accounts",
+      "description": "Stolen operator credentials used for lateral movement.\n\nEvidence (report excerpt): credential theft (T1078 \u2014 Valid Accounts)",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "privilege-escalation"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "stealth"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1078",
+          "external_id": "T1078"
+        }
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--33d1db0a-8d68-4edd-a825-10b2d1cad873",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.164629Z",
+      "modified": "2026-11-02T15:00:44.164629Z",
+      "name": "BM-ENG-WS04",
+      "description": "Status: confirmed affected (evidence-backed).\n\nEngineering workstation, Unit 3 turbine control\n\nEvidence (report excerpt): unexpected logins to the turbine-control engineering workstation",
+      "labels": [
+        "compromised"
+      ],
+      "confidence": 90
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c43216aa-88d1-4b84-a0de-c7b152bea7ad",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.164836Z",
+      "modified": "2026-11-02T15:00:44.164836Z",
+      "name": "BM-HIST-01",
+      "description": "Status: confirmed affected (evidence-backed).\n\nPlant data historian\n\nEvidence (report excerpt): lateral movement to the plant historian server",
+      "labels": [
+        "compromised"
+      ],
+      "confidence": 90
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--203bdbb8-6e42-48df-b32e-1bf8e2ee6ac9",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.165176Z",
+      "modified": "2026-11-02T15:00:44.165176Z",
+      "relationship_type": "targets",
+      "description": "Report-level association from 'synthetic_ics_report.txt': technique and system co-occur in the same intrusion report; a specific pairing is NOT asserted.",
+      "source_ref": "attack-pattern--af1e1872-beb1-42dd-a6b3-055698123a08",
+      "target_ref": "infrastructure--33d1db0a-8d68-4edd-a825-10b2d1cad873",
+      "confidence": 50
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a669eb48-d040-49a4-9ff8-e2ed66a497a9",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.165359Z",
+      "modified": "2026-11-02T15:00:44.165359Z",
+      "relationship_type": "targets",
+      "description": "Report-level association from 'synthetic_ics_report.txt': technique and system co-occur in the same intrusion report; a specific pairing is NOT asserted.",
+      "source_ref": "attack-pattern--af1e1872-beb1-42dd-a6b3-055698123a08",
+      "target_ref": "infrastructure--c43216aa-88d1-4b84-a0de-c7b152bea7ad",
+      "confidence": 50
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--88d908d3-da26-4cfb-a056-313ed213e12f",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.165509Z",
+      "modified": "2026-11-02T15:00:44.165509Z",
+      "relationship_type": "targets",
+      "description": "Report-level association from 'synthetic_ics_report.txt': technique and system co-occur in the same intrusion report; a specific pairing is NOT asserted.",
+      "source_ref": "attack-pattern--dde113c2-b782-40e7-aa2e-c7e5569cdd91",
+      "target_ref": "infrastructure--33d1db0a-8d68-4edd-a825-10b2d1cad873",
+      "confidence": 50
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--08a0fe5c-7d19-44a2-976d-2446c6e0514c",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.165646Z",
+      "modified": "2026-11-02T15:00:44.165646Z",
+      "relationship_type": "targets",
+      "description": "Report-level association from 'synthetic_ics_report.txt': technique and system co-occur in the same intrusion report; a specific pairing is NOT asserted.",
+      "source_ref": "attack-pattern--dde113c2-b782-40e7-aa2e-c7e5569cdd91",
+      "target_ref": "infrastructure--c43216aa-88d1-4b84-a0de-c7b152bea7ad",
+      "confidence": 50
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--f6bc31b2-6e2d-48b7-9b03-68d32857818f",
+      "created_by_ref": "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+      "created": "2026-11-02T15:00:44.165891Z",
+      "modified": "2026-11-02T15:00:44.165891Z",
+      "name": "Threat analysis: synthetic_ics_report.txt",
+      "description": "Fictional intrusion at Blue Mesa Power Unit 3: a spearphishing attachment led to credential theft and lateral movement to the plant historian, with staging to external infrastructure.",
+      "published": "2026-11-02T15:00:44.147096Z",
+      "object_refs": [
+        "identity--eeb1990a-bc54-48ce-bfd1-998572551c28",
+        "indicator--1afac1d2-412e-445a-8912-0cc00a7148f9",
+        "indicator--604d2dcc-9c25-4306-8df4-9181ea4627f0",
+        "vulnerability--b72e1d81-2152-41fd-95c1-82b5ad75bf48",
+        "attack-pattern--af1e1872-beb1-42dd-a6b3-055698123a08",
+        "attack-pattern--dde113c2-b782-40e7-aa2e-c7e5569cdd91",
+        "infrastructure--33d1db0a-8d68-4edd-a825-10b2d1cad873",
+        "infrastructure--c43216aa-88d1-4b84-a0de-c7b152bea7ad",
+        "relationship--203bdbb8-6e42-48df-b32e-1bf8e2ee6ac9",
+        "relationship--a669eb48-d040-49a4-9ff8-e2ed66a497a9",
+        "relationship--88d908d3-da26-4cfb-a056-313ed213e12f",
+        "relationship--08a0fe5c-7d19-44a2-976d-2446c6e0514c"
+      ],
+      "labels": [
+        "threat-report"
+      ],
+      "external_references": [
+        {
+          "source_name": "threatlens-report",
+          "description": "Source file: synthetic_ics_report.txt"
+        }
+      ]
+    }
+  ]
+}
